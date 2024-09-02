@@ -1,0 +1,2 @@
+etcd=com.wt.wtrpc.registry.EtcdRegistry
+zookeeper=com.yupi.yurpc.registry.ZooKeeperRegistry

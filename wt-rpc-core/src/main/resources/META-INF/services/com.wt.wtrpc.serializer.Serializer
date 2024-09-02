@@ -1,0 +1,4 @@
+#jdk=com.wt.wtrpc.serializer.JdkSerializer
+#hessian=com.wt.wtrpc.serializer.HessianSerializer
+#json=com.wt.wtrpc.serializer.JsonSerializer
+#kryo=com.wt.wtrpc.serializer.KryoSerializer

@@ -1,0 +1,2 @@
+json=com.wt.wtrpc.serializer.JsonSerializer
+kryo=com.wt.wtrpc.serializer.KryoSerializer
