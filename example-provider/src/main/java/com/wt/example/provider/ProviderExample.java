@@ -9,6 +9,7 @@ import com.wt.wtrpc.registry.LocalRegistry;
 import com.wt.wtrpc.registry.Registry;
 import com.wt.wtrpc.registry.RegistryFacatory;
 import com.wt.wtrpc.server.VertxHttpServer;
+import com.wt.wtrpc.server.tcp.VertxTcpServer;
 
 public class ProviderExample {
     public static void main(String[] args) {
@@ -26,7 +27,9 @@ public class ProviderExample {
         ServiceMetaInfo serviceMetaInfo = new ServiceMetaInfo();
 
         serviceMetaInfo.setServiceName(serviceName);
-        serviceMetaInfo.setServiceAddress(rpcConfig.getServerHost()+":"+rpcConfig.getServerPort());
+        serviceMetaInfo.setServiceHost(rpcConfig.getServerHost());
+        serviceMetaInfo.setServicePort(rpcConfig.getServerPort());
+//        serviceMetaInfo.setServiceAddress(rpcConfig.getServerHost()+":"+rpcConfig.getServerPort());
         try {
             registry.register(serviceMetaInfo);
             System.out.println("服务注册成功");
@@ -34,7 +37,10 @@ public class ProviderExample {
             throw new RuntimeException(e);
         }
         //启动web服务
-        VertxHttpServer httpServer = new VertxHttpServer();
-        httpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
+//        VertxHttpServer httpServer = new VertxHttpServer();
+//        httpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
+        //启动TCP服务
+        VertxTcpServer vertxTcpServer = new VertxTcpServer();
+        vertxTcpServer.doStart(8080);
     }
 }
