@@ -1,0 +1,3 @@
+roundRobin=com.wt.wtrpc.loadbalancer.RoundRobinLoadBalancer
+random=com.wt.wtrpc.loadbalancer.RandomLoadBalancer
+consitentHash=com.wt.wtrpc.loadbalancer.ConsistentHashLoadBalancer

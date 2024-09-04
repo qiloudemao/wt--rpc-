@@ -1,5 +1,6 @@
 package com.wt.wtrpc.config;
 
+import com.wt.wtrpc.loadbalancer.LoadBalancerKeys;
 import com.wt.wtrpc.serializer.SerializerKeys;
 import lombok.Data;
 
@@ -29,6 +30,10 @@ public class RpcConfig {
      * 注册中心配置
      */
     private RegistryConfig registryConfig=new RegistryConfig();
+    /**
+     * 负载均衡器
+     */
+    private String LoadBalancer= LoadBalancerKeys.ROUND_ROBIN;
     /**
      * 模拟调用
      *
