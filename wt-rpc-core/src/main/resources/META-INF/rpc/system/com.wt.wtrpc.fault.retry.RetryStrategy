@@ -1,0 +1,2 @@
+no=com.wt.wtrpc.fault.retry.NoRetryStrategy
+fixedInterval=com.wt.wtrpc.fault.retry.FixedIntervalRetryStrategy

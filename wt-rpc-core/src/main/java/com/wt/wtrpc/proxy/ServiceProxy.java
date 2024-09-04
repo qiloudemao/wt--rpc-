@@ -2,6 +2,8 @@ package com.wt.wtrpc.proxy;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.IdUtil;
+import com.wt.wtrpc.fault.retry.RetryStrategy;
+import com.wt.wtrpc.fault.retry.RetryStrategyFactory;
 import com.wt.wtrpc.loadbalancer.LoadBalancer;
 import com.wt.wtrpc.loadbalancer.LoadBalancerFactory;
 import com.wt.wtrpc.model.ServiceMetaInfo;
@@ -73,8 +75,14 @@ public class ServiceProxy implements InvocationHandler {
             ServiceMetaInfo selectedServiceMetaInfo = loadBalancer.select(requestParams, serviceMetaInfoList);
 
             //发送 rpc 请求
-            RpcResponse rpcResponse = VertxTcpClient.doRequest(rpcRequest, selectedServiceMetaInfo);
-            return  rpcResponse.getData();
+//            RpcResponse rpcResponse = VertxTcpClient.doRequest(rpcRequest, selectedServiceMetaInfo);
+//            return  rpcResponse.getData();
+            //发送 rpc 请求
+            RetryStrategy retryStrategy = RetryStrategyFactory.getInstance(rpcConfig.getRetryStrategy());
+            RpcResponse rpcResponse = retryStrategy.doRetry(() ->
+                    VertxTcpClient.doRequest(rpcRequest, selectedServiceMetaInfo)
+            );
+            return rpcResponse.getData();
         } catch (IOException e) {
             throw new RuntimeException("调用失败");
         }

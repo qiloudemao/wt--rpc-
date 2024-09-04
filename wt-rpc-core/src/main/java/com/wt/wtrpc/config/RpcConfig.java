@@ -1,5 +1,6 @@
 package com.wt.wtrpc.config;
 
+import com.wt.wtrpc.fault.retry.RetryStrategyKeys;
 import com.wt.wtrpc.loadbalancer.LoadBalancerKeys;
 import com.wt.wtrpc.serializer.SerializerKeys;
 import lombok.Data;
@@ -34,6 +35,11 @@ public class RpcConfig {
      * 负载均衡器
      */
     private String LoadBalancer= LoadBalancerKeys.ROUND_ROBIN;
+    /**
+     * 重试策略
+     */
+    private String retryStrategy= RetryStrategyKeys.NO;
+
     /**
      * 模拟调用
      *
