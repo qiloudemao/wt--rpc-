@@ -2,7 +2,7 @@ package com.wt.wtrpc.registry;
 
 import com.wt.wtrpc.spi.SpiLoader;
 
-public class RegistryFacatory {
+public class RegistryFactory {
     static {
         SpiLoader.load(Registry.class);
     }

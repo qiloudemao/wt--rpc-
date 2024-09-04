@@ -7,8 +7,7 @@ import com.wt.wtrpc.config.RegistryConfig;
 import com.wt.wtrpc.config.RpcConfig;
 import com.wt.wtrpc.registry.LocalRegistry;
 import com.wt.wtrpc.registry.Registry;
-import com.wt.wtrpc.registry.RegistryFacatory;
-import com.wt.wtrpc.server.VertxHttpServer;
+import com.wt.wtrpc.registry.RegistryFactory;
 import com.wt.wtrpc.server.tcp.VertxTcpServer;
 
 public class ProviderExample {
@@ -23,7 +22,7 @@ public class ProviderExample {
         RpcConfig rpcConfig = RpcApplication.getRpcConfig();
         RegistryConfig registryConfig = rpcConfig.getRegistryConfig();
 
-        Registry registry = RegistryFacatory.getInstance(registryConfig.getRegistry());
+        Registry registry = RegistryFactory.getInstance(registryConfig.getRegistry());
         ServiceMetaInfo serviceMetaInfo = new ServiceMetaInfo();
 
         serviceMetaInfo.setServiceName(serviceName);

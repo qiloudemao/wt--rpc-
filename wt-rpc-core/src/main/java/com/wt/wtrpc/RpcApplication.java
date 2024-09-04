@@ -4,9 +4,8 @@ import com.wt.wtrpc.config.RegistryConfig;
 import com.wt.wtrpc.config.RpcConfig;
 import com.wt.wtrpc.constant.RpcConstant;
 import com.wt.wtrpc.registry.Registry;
-import com.wt.wtrpc.registry.RegistryFacatory;
+import com.wt.wtrpc.registry.RegistryFactory;
 import com.wt.wtrpc.utils.ConfigUtils;
-import io.netty.handler.codec.http2.Http2Exception;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -24,7 +23,7 @@ public class RpcApplication {
         log.info("rpc init, config={}",newRpcConfig.toString());
         //注册中心初始化
         RegistryConfig registryConfig = rpcConfig.getRegistryConfig();
-        Registry registry = RegistryFacatory.getInstance(registryConfig.getRegistry());
+        Registry registry = RegistryFactory.getInstance(registryConfig.getRegistry());
         registry.init(registryConfig);
         log.info("registry init,config={}",registryConfig);
         //创建并注册

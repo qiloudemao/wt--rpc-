@@ -1,6 +1,7 @@
 package com.wt.wtrpc.config;
 
 import com.wt.wtrpc.fault.retry.RetryStrategyKeys;
+import com.wt.wtrpc.fault.tolerant.TolerantStrategyKeys;
 import com.wt.wtrpc.loadbalancer.LoadBalancerKeys;
 import com.wt.wtrpc.serializer.SerializerKeys;
 import lombok.Data;
@@ -39,7 +40,10 @@ public class RpcConfig {
      * 重试策略
      */
     private String retryStrategy= RetryStrategyKeys.NO;
-
+    /**
+     * 容错策略
+     */
+    private String tolerantStrategy= TolerantStrategyKeys.FAIL_FAST;
     /**
      * 模拟调用
      *

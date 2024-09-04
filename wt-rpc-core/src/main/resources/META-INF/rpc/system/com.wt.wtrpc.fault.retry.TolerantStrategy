@@ -1,0 +1,4 @@
+failBack=com.wt.wtrpc.fault.tolerant.FailBackTolerantStrategy
+failFast=com.wt.wtrpc.fault.tolerant.FailFastTolerantStrategy
+failOver=com.wt.wtrpc.fault.tolerant.FailOverTolerantStrategy
+failSafe=com.wt.wtrpc.fault.tolerant.FailSafeTolerantStrategy
