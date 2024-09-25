@@ -8,7 +8,7 @@
 
 **简易框架示意图**：
 
-![image-20240925234543563](C:\Users\86178\AppData\Roaming\Typora\typora-user-images\image-20240925234543563.png)
+![img.png](img.png)
 
 
 
