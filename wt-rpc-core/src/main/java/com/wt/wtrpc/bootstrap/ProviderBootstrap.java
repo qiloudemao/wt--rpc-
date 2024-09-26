@@ -50,16 +50,5 @@ public class ProviderBootstrap {
             VertxTcpServer vertxTcpServer = new VertxTcpServer();
             vertxTcpServer.doStart(rpcConfig.getServerPort());
         }
-
-
-
-
-
-
-
-
-
-
-
     }
 }

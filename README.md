@@ -48,5 +48,9 @@
 
 **7、支持容错机制**
 
-​	
+​	快速失败容错 FailFastTolerantStrategy
+
+​	静默处理 FailSafeTolerantStrategy
+
+**8、 支持注解驱动**
 
