@@ -60,6 +60,8 @@
 
 ​	一致性Hash 负载均衡器 ConsistentHashLoadBalancer(采用一致性hash算法)
 
+​		支持填写自定义配置即可更改负载均衡器（使用spi机制动态修改加载类）
+
 **7、支持重试机制**
 
 ​	不重试 NoRetryStrategy
@@ -71,3 +73,5 @@
 ​	快速失败容错 FailFastTolerantStrategy
 
 ​	静默处理 FailSafeTolerantStrategy
+
+​	服务降级策列
